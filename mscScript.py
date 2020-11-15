@@ -4,7 +4,7 @@ class mscScript:
     #hex(' ') байтов, структура, название.
     CommandLibrary = [
             [ ##mode 0
-                ["00 00", "Bh", "INIT"], #BhI
+                ["00 00", "Bh", "INIT"],
                 ["00 01", "BhBBhBh", "JUMP1?"],
                 ["00 02", "Bh", "JUMP2?"],
                 ["00 03", "Bh", ""],
@@ -399,8 +399,8 @@ class mscScript:
                     out_file.write(self.CommandLibrary[self.__mode][com_index][2])
                 else:
                     out_file.write(commandBytes.hex(' '))
-                out_file.write(" " + str(self.__pointer - self.__segments[0] - 2) + "\n")
-                #out_file.write('\n')
+                #out_file.write(" " + str(self.__pointer - self.__segments[0] - 2) + "\n")
+                out_file.write('\n')
 
                 args = []
                 for i in range(len(self.CommandLibrary[self.__mode][com_index][1])):
