@@ -4,7 +4,7 @@ class mscScript:
     #hex(' ') байтов, структура, название.
     CommandLibrary = [
             [ ##mode 0
-                ["00 00", "BhI", "INIT"],
+                ["00 00", "Bh", "INIT"], #BhI
                 ["00 01", "BhBBhBh", "JUMP1?"],
                 ["00 02", "Bh", "JUMP2?"],
                 ["00 03", "Bh", ""],
@@ -12,7 +12,7 @@ class mscScript:
                 ["00 05", "BhB", "PAUSE"],
                 ["00 06", "", "END"],
                 ["00 07", "B", ""],
-                ["00 08", "S", "CALL_SCENARIO"],
+                ["00 08", "S", "GO_TO_SCRIPT"],
                 ["00 09", "", ""],
                 ["00 0a", "B", ""],
                 ["00 0b", "", ""],
@@ -38,7 +38,7 @@ class mscScript:
                 ["00 37", "HiBh", ""],
 
                 ["01 00", "S", "SET_GAME_TITLE"],
-                ["01 01", "BhS", ""],
+                ["01 01", "BS", "CALL_SCRIPT"],
                 ["01 02", "Bh", ""],
                 ["01 03", "ISS", ""],
                 ["01 04", "BS", ""],
@@ -140,7 +140,7 @@ class mscScript:
                 ["00 05", "BiB", "PAUSE"],
                 ["00 06", "", "END"],
                 ["00 07", "B", ""],
-                ["00 08", "S", "CALL_SCENARIO"],
+                ["00 08", "S", "GO_TO_SCRIPT"],
                 ["00 09", "", ""],
                 ["00 0a", "B", ""],
                 ["00 0b", "", ""],
@@ -166,7 +166,7 @@ class mscScript:
                 ["00 37", "HiBi", ""],
 
                 ["01 00", "S", "SET_GAME_TITLE"],
-                ["01 01", "BiS", ""],
+                ["01 01", "BiS", "CALL_SCRIPT"],
                 ["01 02", "Bi", ""],
                 ["01 03", "ISS", ""],
                 ["01 04", "BS", ""],
@@ -399,8 +399,8 @@ class mscScript:
                     out_file.write(self.CommandLibrary[self.__mode][com_index][2])
                 else:
                     out_file.write(commandBytes.hex(' '))
-                #out_file.write(" " + str(self.__pointer - self.__segments[0] - 2) + "\n")
-                out_file.write('\n')
+                out_file.write(" " + str(self.__pointer - self.__segments[0] - 2) + "\n")
+                #out_file.write('\n')
 
                 args = []
                 for i in range(len(self.CommandLibrary[self.__mode][com_index][1])):
