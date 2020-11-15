@@ -12,7 +12,7 @@ class GUI():
     text_dict = {
         'rus': ['mscScriptTool от Tester-а',
                 'Русский', 'English', '(Дизз)ассемблирование', '(Де)шифровка', 'Помощь:',
-                'Общая', 'По использованию', 'По скриптам .msc', 'По созданию переносов',
+                'Общая', 'По использованию', 'По созданию переносов', 'Тестовая строка',
                 '...', '(Де)шифровать', 'Скрипты msc', '*.msc', 'Все файлы', '*',
                 'Коль файл шифрован, он будет дешифрован, и наоборот.\nПрограмма сама сделает о том заключение.',
                 'Введите имя файла .msc (при необх. с путём) (с расширением):',
@@ -52,17 +52,15 @@ class GUI():
                 'Скрипт успешно собран!',
                 'Скрипт не удалось собрать.\nСкорее всего где-то в коде ошибка.',
                 'Общая помощь',
-                'Текст общей помощи',
+                '''Двуязычное (рус+англ) средство для разборки и сборки скриптов .msc движка визуальных новелл Stuff Script, известного также как Propeller Engine.\nС ним вы можете полностью редактирвоать код, а не только строки, как с ранее существовшими средствами.\nВы можете добавлять разрывы текста по строкам и даже сообщениям без ограничений!\n\nВ нём есть несколько полезных особенностей.\n- Во-первых, во время сборки все номера сообщений пересчитываются.\n- Во-вторых, можно делать комментарии, при этом в начало строки необходимо ставить "$".\n- В-третьих, опишем некоторые определения: "#0-" есть "вольные байты", "#1-" есть команды (и под ними "\[...]" аргументы) и "#2-"/"#3-" есть метки.''',
                 'Помощь по использованию',
-                'Текст помощи по использованию',
-                'Помощь по скриптам',
-                'Текст помощи по скриптам',
+                '''1. Введите название файла .mes в верхней форме (заметьте, с расширением). Также можно вводить относительный или абсолютный до него путь.\n1.1. Совершенно так же, а также после нажатия на кнопку "(Де)шифровать" на панели (де)шифровки вы можете расшифровать или зашифровать скрипт, коли вам то требуется.\n2. Введите название файла .txt в нижней форме (заметьте, с расширением). Также можно вводить относительный или абсолютный до него путь.\n2.1. Также опционально вы можете нажать на кнопку "Анализировать скрипт", дабы узнать его версию и зашифрован ли он.\n3. Для разборки нажмите на кнопку "Разобрать скрипт".\n4. Для сборки нажмите на кнопку "Собрать скрипт".\n5. Статус сих операций будет отображаться на текстовом поле ниже.''',
                 'Помощь по переносам',
-                'Текст помощи по переносам'],
+                '''Иногда можно столкнуться с одной большой-пребольшой проблемой: текст может не полностью влезать в текстовое окно. Однако, с сим средством вам не нужно обрезать его, отнюдь. Вы можеет организовывать переносы по строкам и сообщениям. Методы указаны ниже.\n- Для переносов по строкам добавьте в текущее сообщение следующий тэг (работает корректно до выполнения автопереноса по символам).\n\n_r\n\n- Для переносов по сообщениям добавьте под текущее сообщение следующий код (вместо "Какая_то_строка" вставьте ваше сообщение).\n\n#1-MESSAGE\n[0, 0, 'Какая_то_строка_r']'''],
 
         'eng': ['mscScriptTool by Tester',
                 'Русский', 'English', '(Diss)assembling', '(De)cryption', 'Help:',
-                'Common', 'About usage', 'About .msc scripts', 'About line/message breaks',
+                'Common', 'About usage', 'About line/message breaks', 'TestLine',
                 '...', '(De)crypt', 'Msc scripts', '*.msc', 'All files', '*',
                 'If the file is encrypted, then it will be decrypted,\nand otherwise.\nThe program will conclude it itself.',
                 'Enter the .msc file name (with path to it if needed) (with extension):',
@@ -102,13 +100,11 @@ class GUI():
                 'Assembling succeed!',
                 'Assembling failed.\nThere is a bug somewhere in the .txt.',
                 'Common help',
-                'Common help text',
+                '''Dual languaged (rus+eng) tool for disassembling and assembling scripts .mes from the visual novel's engine Silky Engine (also known as Silky's Engine or SilkyEngine).\nWith it thou can fully edit code, not just strings, as with some earlier tools.\nThou can add line or even message breaks without restrictions!\n\nIt has some useful features.\n- Firstly, during disassembling all opcodes '\x0A' changes to '\x0B', so the engine wouldn't try to decrypt new strings and break latin and half-width kana symbols.\n- Secondly, thou can make comments in txt file with "$" at the beginning of the string.\n- Thirdly, some definations: "#0-" are "free bytes", "#1-" are commands (and "\[...]" are arguments below) and "#2-" are labels.''',
                 'Usage help',
-                'Usage help text',
-                'Script help',
-                'Script help text',
+                '''1. Enter a title of the .msc file in the top entry (do see, with extension). Thou can also enter relative or absolute path.\n1.1. Just as so and after pushing the "(De)crypt" bytton thou can use (de)cryption panel to decrypt or encrypt script as needed.\n2. Enter a title of the .txt file (do see, with extension). Thou can also enter relative or absolute path.\n2.1. After that thou can optionaly to push the button "Analyze script" to get to know it's version or if it's encrypted.\n3. For dissassemble push the button "Disassemble script".\n4. For assemble push the button "Assemble script".\n5. Status will be displayed on the text area below.''',
                 'Line/message breaks help',
-                'Line/message breaks help text']
+                '''Sometimes there could be a very big problem: text may not fully get in textbox. But with this tool thou don't need to cut some part of text, no. Thou can use line and message breaks. Methods are below.\n- For line breaks insert in the current message this tag (works correctly only before the autolinebreak).\n\n_r\n\n- For message breaks insert this below the current message ('SomeString' -> text on the new message).\n\n#1-MESSAGE\n[0, 0, 'SomeString_r']''']
     }
 
     def __init__(self):
@@ -168,12 +164,10 @@ class GUI():
             ))
         self.__btn_helps[0]["command"] = self.__commonHelp
         self.__btn_helps[1]["command"] = self.__usageHelp
-        self.__btn_helps[2]["command"] = self.__scriptHelp
-        self.__btn_helps[3]["command"] = self.__breakHelp
+        self.__btn_helps[2]["command"] = self.__breakHelp
         self.__btn_helps[0].place(relx=0.0, rely=0.0, relwidth=0.5, relheight=0.5)
         self.__btn_helps[1].place(relx=0.5, rely=0.0, relwidth=0.5, relheight=0.5)
-        self.__btn_helps[2].place(relx=0.0, rely=0.5, relwidth=0.5, relheight=0.5)
-        self.__btn_helps[3].place(relx=0.5, rely=0.5, relwidth=0.5, relheight=0.5)
+        self.__btn_helps[2].place(relx=0.0, rely=0.5, relwidth=1.0, relheight=0.5)
         self.__lblpnlHelp.place(relx=0.0, rely=0.8, relwidth=1.0, relheight=0.2)
 
         self.__frm = []
@@ -385,10 +379,8 @@ class GUI():
         messagebox.showinfo(self.text_dict[self.__lang][48], self.text_dict[self.__lang][49])
     def __usageHelp(self):
         messagebox.showinfo(self.text_dict[self.__lang][50], self.text_dict[self.__lang][51])
-    def __scriptHelp(self):
-        messagebox.showinfo(self.text_dict[self.__lang][52], self.text_dict[self.__lang][53])
     def __breakHelp(self):
-        messagebox.showinfo(self.text_dict[self.__lang][54], self.text_dict[self.__lang][55])
+        messagebox.showinfo(self.text_dict[self.__lang][52], self.text_dict[self.__lang][53])
 
     def __crypter(self):
         filer = self.__fileCrypto.get()
