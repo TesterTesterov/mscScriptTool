@@ -133,8 +133,8 @@ class mscScript:
             ],
             [ ##mode 1
                 ["00 00", "BIBBi", "INIT"],
-                ["00 01", "BIBBIBi", "JUMP1?"],
-                ["00 02", "Bi", "JUMP2?"],
+                ["00 01", "BBiHBiI", "JUMP_1"], #BIBBIBi
+                ["00 02", "Bi", "JUMP_2"],
                 ["00 03", "Bi", ""],
                 ["00 04", "", "RETURN"],
                 ["00 05", "BiB", "PAUSE"],
@@ -159,14 +159,14 @@ class mscScript:
                 ["00 30", "", ""],
                 ["00 31", "", ""],
                 ["00 32", "", "CONFIRM_SCENARIO_NAME"],
-                ["00 33", "Bi", "JUMP3?"],
+                ["00 33", "Bi", "JUMP_3"],
                 ["00 34", "Bi", ""],
                 ["00 35", "", ""],
                 ["00 36", "B", ""],
                 ["00 37", "HiBi", ""],
 
                 ["01 00", "S", "SET_GAME_TITLE"],
-                ["01 01", "BiS", "CALL_SCRIPT"],
+                ["01 01", "BS", "CALL_SCRIPT"], #BiS
                 ["01 02", "Bi", ""],
                 ["01 03", "ISS", ""],
                 ["01 04", "BS", ""],
