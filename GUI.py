@@ -393,9 +393,9 @@ class GUI():
                     file_key = open(filer + '.key')
                     key = int(file_key.readline())
                 except:
-                    new_dialog = inputDialog(self.text_dict[self.__lang][23],
-                                             self.text_dict[self.__lang][24],
-                                             self.text_dict[self.__lang][25])
+                    new_dialog = inputDialog(self.text_dict[self.__lang][24],
+                                             self.text_dict[self.__lang][25],
+                                             self.text_dict[self.__lang][26])
                     try:
                         key = int(new_dialog.show()[2:], 16)
                     except:

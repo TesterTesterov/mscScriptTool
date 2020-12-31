@@ -4,9 +4,9 @@ class mscScript:
     #hex(' ') байтов, структура, название.
     CommandLibrary = [
             [ ##mode 0
-                ["00 00", "Bh", "INIT"],
-                ["00 01", "BhBBhBh", "JUMP1?"],
-                ["00 02", "Bh", "JUMP2?"],
+                ["00 00", "BIh", "INIT"], #Bh/BhI/BhH // BIh //BIhhhB
+                ["00 01", "BBhHBhH", "JUMP_1"], #BBBBBBBBBBB
+                ["00 02", "Bh", "JUMP_2"], #BI #BHH
                 ["00 03", "Bh", ""],
                 ["00 04", "", "RETURN"],
                 ["00 05", "BhB", "PAUSE"],
@@ -31,7 +31,7 @@ class mscScript:
                 ["00 30", "", ""],
                 ["00 31", "", ""],
                 ["00 32", "", "CONFIRM_SCENARIO_NAME"],
-                ["00 33", "Bh", "JUMP3?"],
+                ["00 33", "Bh", "JUMP_3"],
                 ["00 34", "Bh", ""],
                 ["00 35", "", ""],
                 ["00 36", "B", ""],
@@ -47,7 +47,7 @@ class mscScript:
                 ["01 07", "BhBh", ""],
                 ["01 08", "BhBhBhBhBhBhBh", ""],
                 ["01 09", "SSSB", ""],
-                ["01 0a", "BhBh", ""],
+                ["01 0a", "BhBhBh", ""], #BhBh
                 ["01 0b", "BhBhS", ""],
                 ["01 0c", "HH", ""],
                 ["01 0d", "BHSS", "SET_SCENARIO_NAME"],
@@ -363,7 +363,7 @@ class mscScript:
         in_file.seek(self.__pointer, 0)
         free_bytes = False
         free_bytes_string = b''
-        out_file.write("#MODE " + str(self.__mode) + "\n")
+        out_file.write("#VERSION " + str(self.__mode) + "\n")
         out_file.write("#ENCODING " + str(self.__encoding) + "\n")
         while (self.__pointer < self.__file_len):
 
@@ -399,7 +399,8 @@ class mscScript:
                     out_file.write(self.CommandLibrary[self.__mode][com_index][2])
                 else:
                     out_file.write(commandBytes.hex(' '))
-                #out_file.write(" " + str(self.__pointer - self.__segments[0] - 2) + "\n")
+                #TODO: УБРАТЬ ПОДСКАЗКУ.
+                #out_file.write(" " + str(self.__pointer - self.__segments[0] - 2))
                 out_file.write('\n')
 
                 args = []
