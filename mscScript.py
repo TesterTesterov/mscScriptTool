@@ -257,7 +257,12 @@ class mscScript:
                 ["06 0b", "HiBi", ""],
                 ["06 0c", "BiBiBiBi", ""],
                 ["06 0d", "", ""],
-                ["06 0e", "BiBi", ""]
+                ["06 0e", "BiBi", ""],
+                ["06 0f", "Bi", ""], #Only latest game?
+                ["06 11", "Bi", ""], #Only latest game?
+                ["06 13", "BiBi", ""], #Only latest game?
+                ["06 14", "BiBiBi", ""], #Only latest game?
+                ["06 15", "Bi", ""] #Only latest game?
             ]
         ]
 
