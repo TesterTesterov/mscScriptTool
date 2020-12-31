@@ -40,14 +40,14 @@ class mscScript:
                 ["01 00", "S", "SET_GAME_TITLE"],
                 ["01 01", "BS", "CALL_SCRIPT"],
                 ["01 02", "Bh", ""],
-                ["01 03", "ISS", ""],
+                ["01 03", "SSS", ""], #ISS
                 ["01 04", "BS", ""],
                 ["01 05", "BhBh", ""],
                 ["01 06", "BhBh", ""],
                 ["01 07", "BhBh", ""],
                 ["01 08", "BhBhBhBhBhBhBh", ""],
                 ["01 09", "SSSB", ""],
-                ["01 0a", "BhBhBh", ""], #BhBh
+                ["01 0a", "BhBh", ""], #BhBhBh #BhBh
                 ["01 0b", "BhBhS", ""],
                 ["01 0c", "HH", ""],
                 ["01 0d", "BHSS", "SET_SCENARIO_NAME"],
