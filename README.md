@@ -1,6 +1,6 @@
 # mscScriptTool
 ## On English
- Dual languaged (rus+eng) tool for disassembling and assembling scripts .msc sfrom the visual novel's engine Stuff Script Engine (also known as Propeller Engine). With it thou can fully edit code, not just strings, as with some earlier tools. Thou can add line or even message breaks without restrictions!
+ Dual languaged (rus+eng) tool for disassembling and assembling scripts .msc sfrom the visual novel's engine Stuff Script Engine (also known as Propeller Engine). With it thou can fully edit code, not just strings, as with some earlier tools. Thou can add line or even message breaks without restrictions! It even recounts all message numbers authomatically!
  
  It has some useful features.
  Firstly, during assembling all message numbers recounts.
@@ -11,9 +11,10 @@
 - [Bullet Butlers](https://vndb.org/v445)
 - [Chrono Belt](https://vndb.org/v647)
 - [Evolimit](https://vndb.org/v3111)
+- [Sougeki no Jaeger](https://vndb.org/v14897)
  
 ## На русском
- Двуязычное (рус+англ) средство для разборки и сборки скриптов .msc движка визуальных новелл Stuff Script, известного также как Propeller Engine. С ним вы можете полностью редактирвоать код, а не только строки, как с ранее существовшими средствами. Вы можете добавлять разрывы текста по строкам и даже сообщениям без ограничений!
+ Двуязычное (рус+англ) средство для разборки и сборки скриптов .msc движка визуальных новелл Stuff Script, известного также как Propeller Engine. С ним вы можете полностью редактирвоать код, а не только строки, как с ранее существовшими средствами. Вы можете добавлять разрывы текста по строкам и даже сообщениям без ограничений! Она даже автоматически перерасчитывает номера всех сообщений!
  
  В нём есть несколько полезных особенностей.
  Во-первых, во время сборки все номера сообщений пересчитываются.
@@ -24,6 +25,7 @@
  - [Пули да дворецкие](https://vndb.org/v445)
  - [Пояс времени](https://vndb.org/v647)
  - [Предел эволюции](https://vndb.org/v3111)
+ - [Егерь лазурных атак](https://vndb.org/v14897)
  
  # Usage / Использование
 ## On English
