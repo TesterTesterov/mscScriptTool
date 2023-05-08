@@ -451,7 +451,7 @@ class mscScript:
         self.__args = []
         self.__offsets = []
 
-        in_file = open(self.__txtFile, 'r', encoding="shift-jis")
+        in_file = open(self.__txtFile, 'r', encoding="cp932")
         current_line = in_file.readline()
         mode = int(current_line.split(' ')[1])
         self.__mode = mode
